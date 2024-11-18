@@ -19,22 +19,26 @@ Tasks:
 ### 2014
 
 - [VGG (Visual Geometry Group)](https://arxiv.org/pdf/1409.1556), First "Deep" convolutional layer, 16 to 19 layers
-- [Inception, 2014 / GoogLeNet](https://arxiv.org/pdf/1409.4842): Instead of a single convolutional block, several convolutional layers in parallel with different kernel width. Also use 1x1 convolution.
+- [Inception, GoogLeNet](https://arxiv.org/pdf/1409.4842): Instead of a single convolutional block, several convolutional layers in parallel with different kernel width. Also use 1x1 convolution.
 
 ### 2015
 
-- [ResNet, 2015](https://arxiv.org/pdf/1512.03385): Add "skip connections". Prevent gradient fading, and enable even deeper network, 50-100 layers
+- [ResNet](https://arxiv.org/pdf/1512.03385): Add "skip connections". Prevent gradient fading, and enable even deeper network, 50-100 layers
+
+### 2016 
+
+- [SqueezeNet](https://arxiv.org/abs/1602.07360): Propose to "shuffle" resulting convolved layers to help the network generalizing (can be seen as similar to dropout).
 
 ### 2017 
 
-- [MobileNet, 2017](https://arxiv.org/pdf/1704.04861): Use depthwise convolution (convolution layer by layer followed by a 1x1 convolution over all resulting layers), reduce network complehttps://arxiv.org/pdf/1505.04597xity and improve generalization.
+- [MobileNet](https://arxiv.org/pdf/1704.04861): Use depthwise convolution (convolution layer by layer followed by a 1x1 convolution over all resulting layers), reduce network complehttps://arxiv.org/pdf/1505.04597xity and improve generalization.
 
 
 
 ## Image Generation 
 
 
-### 2011/2012 ?
+### 2011
 
 - [Convolutional AutoEncoder](https://people.idsia.ch/~ciresan/data/icann2011.pdf)
 
@@ -71,23 +75,42 @@ Tasks:
 
 ## Image Segmentation 
 
+### 2014
 
-- [UNet, 2015](https://arxiv.org/pdf/1505.04597)
-- [R-CNN, 2014](https://arxiv.org/pdf/1311.2524): Introduce "ROIPool"
+- [R-CNN](https://arxiv.org/pdf/1311.2524): Introduce "ROIPool"
+
+### 2015
+
+- [UNet](https://arxiv.org/pdf/1505.04597)
 - [Fast R-CNN](https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Girshick_Fast_R-CNN_ICCV_2015_paper.pdf): Reuse pretrained convNet and add pooling layer + classification layer: Predict class and anchor size.
-- [Mask R-CNN](https://openaccess.thecvf.com/content_ICCV_2017/papers/He_Mask_R-CNN_ICCV_2017_paper.pdf): Rather than predicting a window, classify pixels. Introduce "ROI-align"
 - [Faster RCNN](https://arxiv.org/pdf/1506.01497): Fast RCNN: pass each ROI into the conv network. Faster RCNN, pass the full image into the conv network. Then, extract each ROI and classifiy (bbox location / class). More efficient.
 - [YOLO (You only look once)](https://arxiv.org/pdf/1506.02640): Split the image in 7x7, rescale each patch and classify anchor/no anchor + what's in
+
+### 2016
+
+- [Mask R-CNN](https://openaccess.thecvf.com/content_ICCV_2017/papers/He_Mask_R-CNN_ICCV_2017_paper.pdf): Rather than predicting a window, classify pixels. Introduce "ROI-align"
+
+### 2017
+
 - [Yolo V2](https://arxiv.org/abs/1612.08242)
+
+### 2018
+
 - [Yolo v3](https://arxiv.org/abs/1804.02767)
+
+### 2020 
+
 - [Yolo v4](https://arxiv.org/abs/2004.10934)
-- [SAM: Segment Anything (2023)](https://arxiv.org/pdf/2304.02643)
+
+### 2023
+
+- [SAM: Segment Anything](https://arxiv.org/pdf/2304.02643)
 
 
 
 
 
-# Summary
+# Quick Summary
 
 
 ## Classification
@@ -128,11 +151,13 @@ Max: 152 layers
 
 ### MobileNet
 
-Introduce depthwise convolution: 
+Introduce "depthwise" convolution (at least, democratize the use): 
 
 1. Small kernel convolution applied layer by layer
 2. Aggregation thanks to 1x1 convolution
 
 Improve network efficiency as depthwise convolution faster than traditional conv
 
+
+TBC
 
