@@ -93,12 +93,13 @@ Tasks:
 
 ### 2015
 
-- [UNet](https://arxiv.org/pdf/1505.04597): First Pixel segmentation network
+- [DeConvNet](https://arxiv.org/pdf/1505.04366): Encoder + Decoder - (Encoder: Feature Extraction with a usual network (VGG)) Decoder: from the feature map, recreate shape of objects, where value of a layer is the probability it belongs to this class. UnPooling + 3xDeconvolution. The unpooling operation is responsible of the image re-expension, while the Deconvolution recreate a smooth continuous image. The deconvnet intermediate layer is a 1x1xn feature vector, which is upscaled to retrieve the segmentation mask. The input image has a fixed size.
+- [SegNet](https://arxiv.org/abs/1511.00561): Has a structure similar to the deconvnet. However, image size not restricted (intermediate representation not restricted). The SegNet performs deconvolution using maxpooling indices. 
+- [UNet](https://arxiv.org/pdf/1505.04597): Similar to deconvnet, where input image is constrained in size, and intermediate representation is a small vector. It introduce kind of "residual connections", where convolution outputs (from the encoder) are sent to the decoder (as a residual connection).
+
 - [Fast R-CNN](https://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Girshick_Fast_R-CNN_ICCV_2015_paper.pdf): Reuse pretrained convNet and add pooling layer + classification layer: Predict class and anchor size.
 - [Faster R-CNN](https://arxiv.org/pdf/1506.01497): Fast RCNN: pass each ROI into the conv network. Faster RCNN, pass the full image into the conv network. Then, extract each ROI and classifiy (bbox location / class). More efficient.
 - [YOLO (You only look once)](https://arxiv.org/pdf/1506.02640): Split the image in 7x7, rescale each patch and classify anchor/no anchor + what's in
-- [DeConvNet](https://arxiv.org/pdf/1505.04366): Encoder + Decoder - (Encoder: Feature Extraction with a usual network (VGG)) Decoder: from the feature map, recreate shape of objects, where value of a layer is the probability it belongs to this class. UnPooling + 3xDeconvolution. The unpooling operation is responsible of the image re-expension, while the Deconvolution recreate a smooth continuous image. 
-- [SegNet](https://arxiv.org/abs/1511.00561): AutoEncoder for image segmentation. Very similar to deconvnet (same general architecture)
 
 ### 2016
 
